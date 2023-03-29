@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %} Create Booking{% endblock %} 
+{% block content %}
+<div class="container">
+  <h2>Create Booking Form</h2>
+  <form action="/bookings/CreateBooking" method="post">{% csrf_token %}
+    <div class="form-group">
+      <label for="email">Customer's Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="shot">Choose a Drone Shot:</label>
+        {% if data.droneShot|length != 0%}
+          <select name="shot" id="shot">
+          {% for d in data.droneShot %}
+           <option value={{d.id}}>{{d.shot_name}},{{d.drone_type}}</option>
+          {% endfor %}
+          </select>
+        {% else %}
+          <a type="button" class="btn btn-danger" href="/shot/Create">Create New Drone Shot</a>
+        {% endif %}      
+    </div>
+    <div class="form-group">
+      <label for="event_date">Event Date</label>
+      <input type="date" class="form-control" id="event_date"  name="event_date" required>
+    </div>
+    <div class="form-group">
+      <label for="event_time">Event Time</label>
+      <input type="time" class="form-control" id="event_time"  name="event_time" required>
+    </div>
+    <div class="form-group">
+      <label for="addr">Choose a Address:</label>
+        {% if data.location|length != 0%}
+          <select name="addr" id="addr">
+          {% for d in data.location %}
+           <option value={{d.id}}>{{d.door_no}},{{d.address}},{{d.city}},{{d.state}}</option>
+          {% endfor %}
+          </select>
+        {% else %}
+          <a type="button" class="btn btn-danger" href="/location/Create">Create New Location</a>
+        {% endif %}      
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock  %}

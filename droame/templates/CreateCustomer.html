@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %} Create Customer{% endblock %} 
+
+{% block content %}
+<div class="container">
+  <h2>Create Customer Form</h2>
+  <form action="/customers/CreateCustomer" method="post">{% csrf_token %}
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="phone_number">Phone Number:</label>
+      <input type="tel" class="form-control" id="phone_number" placeholder="Enter Phone Number" name="phone_number" maxlength="10" minlength="10" required >
+    </div>
+    <div class="form-group">
+      <label for="addr">Choose a Address:</label>
+        {% if data|length != 0%}
+          <select name="addr" id="addr">
+          {% for d in data %}
+           <option value={{d.id}}>{{d.door_no}},{{d.address}},{{d.city}},{{d.state}}</option>
+          {% endfor %}
+          </select>
+        {% else %}
+          <a type="button" class="btn btn-danger" href="/location/Create">Create New Location</a>
+        {% endif %}      
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock %}

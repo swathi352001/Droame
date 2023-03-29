@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block title %} Home{% endblock %} 
+
+{% block content %}
+<div class="container px-4">
+  <div class="row gx-5">
+    <div class="card col p-3" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Create Customer</h5>
+        <hr/>
+        <p class="card-text">Create new customer by clicking the button below</p>
+        <a href="/customers/Create" class="card-link btn btn-primary">Create Customer</a>
+      </div>
+    </div>
+    &nbsp;
+    &nbsp;
+    <div class="card col p-3" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Create Bookings</h5>
+        <hr/>
+        <p class="card-text">Create new bookings by clicking the button below</p>
+        <a href="/bookings/Create" class="card-link btn btn-primary">Create Bookings</a>
+      </div>
+    </div>
+  </div>
+<br/>
+  <div class="row gx-5">
+    <div class="card col p-3" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">View All Customer</h5>
+        <hr/>
+        <p class="card-text">View All customer by clicking the button below</p>
+        <a href="/customers/List" class="card-link btn btn-primary">View All Customers</a>
+      </div>
+    </div>
+    &nbsp;
+    &nbsp;
+    <div class="card col p-3" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">View All Bookings</h5>
+        <hr/>
+        <p class="card-text">View All bookings by clicking the button below</p>
+        <a href="/bookings/List" class="card-link btn btn-primary">View All Bookings</a>
+      </div>
+    </div>
+  </div>
+
+  <br/>
+  <div class="row gx-5">
+    <div class="card col p-3" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Create New Location</h5>
+        <hr/>
+        <p class="card-text">Create New Location by clicking the button below</p>
+        <a href="/location/Create" class="card-link btn btn-primary">Create New Location</a>
+      </div>
+    </div>
+    &nbsp;
+    &nbsp;
+    <div class="card col p-3" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Create New Drone Shot</h5>
+        <hr/>
+        <p class="card-text">Create New Drone Shot by clicking the button below</p>
+        <a href="/shot/Create" class="card-link btn btn-primary">Create New Drone Shot</a>
+      </div>
+    </div>
+  </div>
+</div>
+  
+{% endblock %}
+
+

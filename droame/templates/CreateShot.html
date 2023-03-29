@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Create Shots{% endblock  %}
+
+{% block content %}
+<div class="container">
+    <h2>Create Shots Form</h2>
+    <form action="/shot/CreateShot" method="post">{% csrf_token %}
+      <div class="form-group">
+        <label for="name">Shot Name:</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter shot name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="type">Drone Type:</label>
+        <input type="text" class="form-control" id="type" placeholder="Enter drone type" name="type" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+{% endblock  %}
